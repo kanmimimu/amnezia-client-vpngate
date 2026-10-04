@@ -91,6 +91,8 @@ namespace PageLoader
         PageSettingsLanguage,
 
         PageUpdate,
+
+        PageSetupWizardVpnGate,
     };
     Q_ENUM_NS(PageEnum)
 

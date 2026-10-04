@@ -17,6 +17,8 @@ class ImportUiController : public QObject
 public:
     explicit ImportUiController(ImportController* importController, QObject *parent = nullptr);
 
+    void setConfigDescription(const QString &description);
+
 public slots:
     void importConfig();
     void clearConfigFileName();

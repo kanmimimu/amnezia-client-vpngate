@@ -23,6 +23,7 @@
 #include "ui/controllers/importUiController.h"
 #include "ui/controllers/api/subscriptionUiController.h"
 #include "ui/controllers/updateUiController.h"
+#include "ui/controllers/vpnGateUiController.h"
 #include "ui/models/serversModel.h"
 #include "core/controllers/serversController.h"
 #include "core/controllers/ipSplitTunnelingController.h"
@@ -99,6 +100,9 @@ void CoreSignalHandlers::initErrorMessagesHandler()
             qOverload<ErrorCode>(&PageController::showErrorMessage));
 
     connect(m_coreController->m_settingsUiController, &SettingsUiController::errorOccurred, m_coreController->m_pageController,
+            qOverload<ErrorCode>(&PageController::showErrorMessage));
+
+    connect(m_coreController->m_vpnGateUiController, &VpnGateUiController::errorOccurred, m_coreController->m_pageController,
             qOverload<ErrorCode>(&PageController::showErrorMessage));
 }
 

@@ -1046,6 +1046,7 @@ jobs:
           - SignalOrderTest
           - ServersModelSyncTest
           - ServerRenameTest
+          - VpnGateControllerTest
           - SettingsSignalsTest
           - UiServersModelAndControllerTest
           - XraySerializationTest
@@ -1233,6 +1234,7 @@ jobs:
           - SignalOrderTest
           - ServersModelSyncTest
           - ServerRenameTest
+          - VpnGateControllerTest
           - SettingsSignalsTest
           - UiServersModelAndControllerTest
           - XraySerializationTest
@@ -1337,6 +1339,7 @@ jobs:
           - SignalOrderTest
           - ServersModelSyncTest
           - ServerRenameTest
+          - VpnGateControllerTest
           - SettingsSignalsTest
           - UiServersModelAndControllerTest
           - XraySerializationTest

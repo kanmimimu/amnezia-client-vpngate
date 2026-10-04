@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/ui/qml">
         <file>Components/UpdateSupportDrawer.qml</file>
+        <file>Components/VpnGateProxyModel.qml</file>
         <file>Components/AdLabel.qml</file>
         <file>Components/ConnectButton.qml</file>
         <file>Components/ConnectionTypeSelectionDrawer.qml</file>
@@ -143,6 +144,7 @@
         <file>Pages2/PageSetupWizardStart.qml</file>
         <file>Pages2/PageSetupWizardTextKey.qml</file>
         <file>Pages2/PageSetupWizardViewConfig.qml</file>
+        <file>Pages2/PageSetupWizardVpnGate.qml</file>
         <file>Pages2/PageShare.qml</file>
         <file>Pages2/PageShareFullAccess.qml</file>
         <file>Pages2/PageShareConnection.qml</file>

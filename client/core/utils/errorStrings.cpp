@@ -137,6 +137,10 @@ QString errorString(ErrorCode code) {
     case(ErrorCode::SubscriptionUnavailable): errorMessage = QObject::tr("The requested subscription is not available for purchase"); break;
     case(ErrorCode::BillingNetworkError): errorMessage = QObject::tr("A network error occurred during the operation, please check the Internet connection"); break;
 
+    // VPN Gate errors
+    case(ErrorCode::VpnGateFetchError): errorMessage = QObject::tr("Failed to get the VPN Gate server list. Please check the Internet connection and try again"); break;
+    case(ErrorCode::VpnGateServerListEmptyError): errorMessage = QObject::tr("The VPN Gate server list does not contain any usable servers right now. Please try again later"); break;
+
     case(ErrorCode::InternalError):
     default:
         errorMessage = QObject::tr("Internal error"); break;

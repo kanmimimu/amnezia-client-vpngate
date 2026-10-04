@@ -17,6 +17,7 @@ PageType {
     id: root
 
     property bool isRestoringBackup: false
+    property bool isFetchingVpnGate: false
 
     Connections {
         target: ImportController
@@ -26,6 +27,28 @@ PageType {
                 PageController.closePage()
             }
             PageController.goToPage(PageEnum.PageSetupWizardViewConfig)
+        }
+    }
+
+    Connections {
+        target: VpnGateController
+
+        // this page stays in the stack below the VPN Gate page, which refreshes the list by itself
+        function onServersFetched() {
+            if (!root.isFetchingVpnGate) {
+                return
+            }
+            root.isFetchingVpnGate = false
+            PageController.showBusyIndicator(false)
+            PageController.goToPage(PageEnum.PageSetupWizardVpnGate)
+        }
+
+        function onErrorOccurred(errorCode) {
+            if (!root.isFetchingVpnGate) {
+                return
+            }
+            root.isFetchingVpnGate = false
+            PageController.showBusyIndicator(false)
         }
     }
 
@@ -271,6 +294,7 @@ PageType {
     property list<QtObject> variants: [
         amneziaVpn,
         selfHostVpn,
+        vpnGate,
         backupRestore,
         fileOpen,
         qrScan,
@@ -306,6 +330,21 @@ PageType {
         property bool isVisible: true
         property var handler: function() {
             PageController.goToPage(PageEnum.PageSetupWizardCredentials)
+        }
+    }
+
+    QtObject {
+        id: vpnGate
+
+        property bool featuredAmneziaConnection: false
+        property string title: qsTr("VPN Gate")
+        property string description: qsTr("Free public VPN servers run by volunteers")
+        property string imageSource: "qrc:/images/controls/globe-2.svg"
+        property bool isVisible: true
+        property var handler: function() {
+            root.isFetchingVpnGate = true
+            PageController.showBusyIndicator(true)
+            VpnGateController.fetchServers()
         }
     }
 

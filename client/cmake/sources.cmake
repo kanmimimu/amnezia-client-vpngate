@@ -49,6 +49,7 @@ set(HEADERS ${HEADERS}
     ${CLIENT_ROOT_DIR}/core/controllers/api/subscriptionController.h
     ${CLIENT_ROOT_DIR}/core/controllers/api/newsController.h
     ${CLIENT_ROOT_DIR}/core/controllers/updateController.h
+    ${CLIENT_ROOT_DIR}/core/controllers/vpnGateController.h
     ${CLIENT_ROOT_DIR}/core/repositories/secureServersRepository.h
     ${CLIENT_ROOT_DIR}/core/repositories/secureAppSettingsRepository.h
     ${CLIENT_ROOT_DIR}/core/protocols/qmlRegisterProtocols.h
@@ -134,6 +135,7 @@ set(SOURCES ${SOURCES}
     ${CLIENT_ROOT_DIR}/core/controllers/api/subscriptionController.cpp
     ${CLIENT_ROOT_DIR}/core/controllers/api/newsController.cpp
     ${CLIENT_ROOT_DIR}/core/controllers/updateController.cpp
+    ${CLIENT_ROOT_DIR}/core/controllers/vpnGateController.cpp
     ${CLIENT_ROOT_DIR}/core/repositories/secureServersRepository.cpp
     ${CLIENT_ROOT_DIR}/core/repositories/secureAppSettingsRepository.cpp
     ${CLIENT_ROOT_DIR}/ui/utils/qAutoStart.cpp

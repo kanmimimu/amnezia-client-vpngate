@@ -104,6 +104,17 @@ if(NOT ANDROID)
         test_common
     )
 
+    add_executable(test_vpn_gate_controller
+        testVpnGateController.cpp
+    )
+
+    # registers the SortFilterProxyModel QML types, which the proxy model component of the page uses
+    target_link_libraries(test_vpn_gate_controller PRIVATE
+        Qt6::Test
+        test_common
+        SortFilterProxyModel
+    )
+
     add_executable(test_settings_signals
         testSettingsSignals.cpp
     )
@@ -400,6 +411,7 @@ if(NOT ANDROID)
     add_test(NAME SignalOrderTest                  COMMAND test_signal_order)
     add_test(NAME ServersModelSyncTest             COMMAND test_servers_model_sync)
     add_test(NAME ServerRenameTest                 COMMAND test_server_rename)
+    add_test(NAME VpnGateControllerTest            COMMAND test_vpn_gate_controller)
     add_test(NAME SettingsSignalsTest              COMMAND test_settings_signals)
     add_test(NAME UiServersModelAndControllerTest  COMMAND test_ui_servers_model_and_controller)
     add_test(NAME XraySerializationTest            COMMAND test_xray_serialization)

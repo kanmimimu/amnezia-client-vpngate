@@ -29,6 +29,7 @@
 #include "ui/controllers/updateUiController.h"
 #include "ui/controllers/api/servicesCatalogUiController.h"
 #include "ui/controllers/networkReachabilityController.h"
+#include "ui/controllers/vpnGateUiController.h"
 
 #include "core/controllers/serversController.h"
 #include "core/controllers/selfhosted/usersController.h"
@@ -43,6 +44,7 @@
 #include "core/controllers/settingsController.h"
 #include "core/controllers/connectionController.h"
 #include "core/controllers/updateController.h"
+#include "core/controllers/vpnGateController.h"
 
 #include "core/repositories/secureServersRepository.h"
 #include "core/repositories/secureAppSettingsRepository.h"
@@ -78,6 +80,7 @@
 
 #include "ui/models/ipSplitTunnelingModel.h"
 #include "ui/models/newsModel.h"
+#include "ui/models/vpnGateModel.h"
 
 #if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS)
     #include "ui/utils/notificationHandler.h"
@@ -178,6 +181,7 @@ private:
     AllowedDnsUiController* m_allowedDnsUiController;
     LanguageUiController* m_languageUiController;
     UpdateUiController* m_updateUiController;
+    VpnGateUiController* m_vpnGateUiController;
 
     SubscriptionUiController* m_subscriptionUiController;
     ApiNewsUiController* m_apiNewsUiController;
@@ -194,6 +198,7 @@ private:
     StorePurchaseController* m_storePurchaseController;
     NewsController* m_newsController;
     UpdateController* m_updateController;
+    VpnGateController* m_vpnGateController;
     InstallController* m_installController;
     ExportController* m_exportController;
     ConnectionController* m_connectionController;
@@ -206,6 +211,7 @@ private:
     ProtocolsModel* m_protocolsModel;
     IpSplitTunnelingModel* m_ipSplitTunnelingModel;
     NewsModel* m_newsModel;
+    VpnGateModel* m_vpnGateModel;
     AllowedDnsModel* m_allowedDnsModel;
     AppSplitTunnelingModel* m_appSplitTunnelingModel;
     ClientManagementModel* m_clientManagementModel;

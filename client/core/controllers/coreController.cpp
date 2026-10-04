@@ -139,6 +139,9 @@ void CoreController::initModels()
 
     m_newsModel = new NewsModel(m_appSettingsRepository, this);
     setQmlContextProperty("NewsModel", m_newsModel);
+
+    m_vpnGateModel = new VpnGateModel(this);
+    setQmlContextProperty("VpnGateModel", m_vpnGateModel);
 }
 
 void CoreController::initRepositories()
@@ -163,6 +166,7 @@ void CoreController::initCoreControllers()
     m_storePurchaseController = new StorePurchaseController(m_serversRepository, m_appSettingsRepository);
     m_newsController = new NewsController(m_appSettingsRepository, m_serversRepository);
     m_updateController = new UpdateController(m_appSettingsRepository, this);
+    m_vpnGateController = new VpnGateController(this);
     
     m_installController = new InstallController(m_serversRepository, m_appSettingsRepository, this);
     m_exportController = new ExportController(m_serversRepository, m_appSettingsRepository, this);
@@ -240,6 +244,9 @@ void CoreController::initControllers()
 
     m_updateUiController = new UpdateUiController(m_updateController, this);
     setQmlContextProperty("UpdateController", m_updateUiController);
+
+    m_vpnGateUiController = new VpnGateUiController(m_vpnGateController, m_vpnGateModel, m_importController, this);
+    setQmlContextProperty("VpnGateController", m_vpnGateUiController);
 }
 
 void CoreController::initAndroidController()

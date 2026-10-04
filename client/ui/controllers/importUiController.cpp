@@ -6,6 +6,7 @@
 #include <QMutex>
 #include <QJsonDocument>
 
+#include "core/utils/constants/configKeys.h"
 #include "systemController.h"
 
 #ifdef Q_OS_ANDROID
@@ -96,6 +97,12 @@ bool ImportUiController::extractConfigFromQr(const QByteArray &data)
     
     emit importConfigChanged();
     return true;
+}
+
+void ImportUiController::setConfigDescription(const QString &description)
+{
+    m_config[amnezia::configKey::description] = description;
+    emit importConfigChanged();
 }
 
 QString ImportUiController::getConfig()
